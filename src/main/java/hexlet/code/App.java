@@ -1,8 +1,38 @@
 package hexlet.code;
 
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+
+@Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
+        description = "Compares two configuration files and shows a difference.")
+
+class VersionedCommand {
+
+  @Option(names = { "-V", "--version" }, versionHelp = true,
+          description = "print version information and exit")
+  boolean versionRequested;
+
+  @Option(names = {"-h", "--help"}, usageHelp = true, description = "display this help message")
+  boolean usageHelpRequested;
+ }
+
+
 public class App {
   public static void main(String[] args) {
-    System.out.println("Hello World!");
+
+    CommandLine commandLine = new CommandLine(new VersionedCommand());
+    commandLine.parseArgs(args);
+
+    if (commandLine.isUsageHelpRequested()) {
+      commandLine.usage(System.out);
+      return;
+    } else if (commandLine.isVersionHelpRequested()) {
+      commandLine.printVersionHelp(System.out);
+      return;
+    }
+
+    System.out.println("Hello, World!");
   }
 }
 
