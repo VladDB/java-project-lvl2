@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Match {
-    public static Object matchingFiles(String file1, String file2) throws IOException {
+    public static String matchingFiles(String file1, String file2) throws IOException {
         Path pathFirstFile = Paths.get(file1);
         Path pathSecondFile = Paths.get(file2);
 
@@ -26,7 +26,7 @@ public class Match {
 
         List<Difference> mapsDifference = findDifference(map1, map2);
 
-        return Format.showdiff(mapsDifference);
+        return Format.showDiff(mapsDifference);
     }
 
     private static List<Difference> findDifference(TreeMap map1, TreeMap map2) {
