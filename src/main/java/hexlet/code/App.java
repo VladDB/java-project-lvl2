@@ -7,29 +7,29 @@ import picocli.CommandLine.Parameters;
 
 import java.util.concurrent.Callable;
 
-  @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
+@Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
           description = "Compares two configuration files and shows a difference.")
 
-public class App implements Callable {
+public final class App implements Callable<Object> {
 
-  @Parameters(paramLabel = "filepath1", description = "path to first file")
-  private String file1;
+    @Parameters(paramLabel = "filepath1", description = "path to first file")
+    private String file1;
 
-  @Parameters(paramLabel = "filepath2", description = "path to second file")
-  private String file2;
+    @Parameters(paramLabel = "filepath2", description = "path to second file")
+    private String file2;
 
-  @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
-  private String format;
+    @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
+    private String format;
 
-  @Override
-  public Object call() throws Exception {
-    System.out.println(Match.matchingFiles(file1, file2));
-    return null;
-  }
+    @Override
+    public Object call() throws Exception {
+        System.out.println(Match.matchingFiles(file1, file2));
+        return null;
+    }
 
-  public static void main(String[] args) {
-    int exitCode = new CommandLine(new App()).execute(args);
-    System.exit(exitCode);
-  }
-  }
+    public static void main(String[] args) {
+        int exitCode = new CommandLine(new App()).execute(args);
+        System.exit(exitCode);
+    }
+}
 
