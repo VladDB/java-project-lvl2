@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,24 +10,22 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Match {
-    public static String matchingFiles(String file1, String file2) throws IOException {
+    public static String matchingFiles(String format, String file1, String file2) throws IOException {
         Path pathFirstFile = Paths.get(file1);
         Path pathSecondFile = Paths.get(file2);
 
         String firstFile = Files.readString(pathFirstFile);
         String secondFile = Files.readString(pathSecondFile);
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        TreeMap map1 = mapper.readValue(firstFile, TreeMap.class);
-        TreeMap map2 = mapper.readValue(secondFile, TreeMap.class);
+        TreeMap<String, Object> map1 = Parser.parseMap(format, firstFile);
+        TreeMap<String, Object> map2 = Parser.parseMap(format, secondFile);
 
         List<Difference> mapsDifference = findDifference(map1, map2);
 
         return Format.showDiff(mapsDifference);
     }
 
-    private static List<Difference> findDifference(TreeMap map1, TreeMap map2) {
+    private static List<Difference> findDifference(TreeMap<String, Object> map1, TreeMap<String, Object> map2) {
         Map<String, Object> fullMap = new TreeMap<>();
         fullMap.putAll(map1);
         fullMap.putAll(map2);

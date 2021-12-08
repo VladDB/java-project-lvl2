@@ -23,7 +23,7 @@ public final class App implements Callable<Object> {
 
     @Override
     public Object call() throws Exception {
-        System.out.println(Match.matchingFiles(file1, file2));
+        System.out.println(Match.matchingFiles(format, file1, file2));
         return null;
     }
 
