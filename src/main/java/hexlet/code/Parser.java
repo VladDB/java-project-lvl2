@@ -10,7 +10,7 @@ public class Parser {
     public static TreeMap<String, Object> parseMap(String format, String fileText) throws JsonProcessingException {
         ObjectMapper mapper;
 
-        if (format.equals("yaml")) {
+        if (format.equals("yaml") || format.equals("yml")) {
             mapper = new ObjectMapper(new YAMLFactory());
         } else {
             mapper = new ObjectMapper();

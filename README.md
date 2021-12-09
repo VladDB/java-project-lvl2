@@ -4,4 +4,8 @@
 <a href="https://codeclimate.com/github/VladDB/java-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/fcedc143774a453498d3/maintainability" /></a>
 <a href="https://codeclimate.com/github/VladDB/java-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/fcedc143774a453498d3/test_coverage" /></a>
 
+JSON
 <a href="https://asciinema.org/a/Z6QfX4s7JjWLpUMKXoIv0RC0b" target="_blank"><img src="https://asciinema.org/a/Z6QfX4s7JjWLpUMKXoIv0RC0b.svg" /></a>
+
+YAML
+<a href="https://asciinema.org/a/fOhAbTlBqld19xlsGOvRgwtVu" target="_blank"><img src="https://asciinema.org/a/fOhAbTlBqld19xlsGOvRgwtVu.svg" /></a>
