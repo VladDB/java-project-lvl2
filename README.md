@@ -9,3 +9,5 @@ JSON
 
 YAML
 <a href="https://asciinema.org/a/fOhAbTlBqld19xlsGOvRgwtVu" target="_blank"><img src="https://asciinema.org/a/fOhAbTlBqld19xlsGOvRgwtVu.svg" /></a>
+
+<a href="https://asciinema.org/a/eDIM4zk9WVqgm0cuvitSrCAst" target="_blank"><img src="https://asciinema.org/a/eDIM4zk9WVqgm0cuvitSrCAst.svg" /></a>
