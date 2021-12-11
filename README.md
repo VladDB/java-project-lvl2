@@ -15,3 +15,6 @@ Format Stylish
 
 Format Plain
 <a href="https://asciinema.org/a/WlYDjVXRATZeyXBG6b7WNejXN" target="_blank"><img src="https://asciinema.org/a/WlYDjVXRATZeyXBG6b7WNejXN.svg" /></a>
+
+Format JSON
+<a href="https://asciinema.org/a/8iBlXEZ6yTs0TRsEnOhTYgltZ" target="_blank"><img src="https://asciinema.org/a/8iBlXEZ6yTs0TRsEnOhTYgltZ.svg" /></a>

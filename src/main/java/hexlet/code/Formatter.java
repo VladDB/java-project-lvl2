@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.Formatters.FormatJson;
 import hexlet.code.Formatters.FormatPlain;
 import hexlet.code.Formatters.FormatStylish;
 
@@ -11,6 +12,8 @@ public class Formatter {
         switch (format) {
             case "plain":
                 return FormatPlain.showDiff(diffList);
+            case "json":
+                return FormatJson.showDiff(diffList);
             case "stylish":
             default:
                 return FormatStylish.showDiff(diffList);
