@@ -10,22 +10,28 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Match {
+
     public static String matchingFiles(String format, String file1, String file2) throws IOException {
+
+        String formatFirstFile = fileFormat(file1);
+        String formatSecondFile = fileFormat(file2);
+
         Path pathFirstFile = Paths.get(file1);
         Path pathSecondFile = Paths.get(file2);
 
         String firstFile = Files.readString(pathFirstFile);
         String secondFile = Files.readString(pathSecondFile);
 
-        TreeMap<String, Object> map1 = Parser.parseMap(format, firstFile);
-        TreeMap<String, Object> map2 = Parser.parseMap(format, secondFile);
+        TreeMap<String, Object> map1 = Parser.parseMap(formatFirstFile, firstFile);
+        TreeMap<String, Object> map2 = Parser.parseMap(formatSecondFile, secondFile);
 
         List<Difference> mapsDifference = findDifference(map1, map2);
 
-        return Format.showDiff(mapsDifference);
+        return Formatter.choseFormat(format, mapsDifference);
     }
 
     private static List<Difference> findDifference(TreeMap<String, Object> map1, TreeMap<String, Object> map2) {
+
         Map<String, Object> fullMap = new TreeMap<>();
         fullMap.putAll(map1);
         fullMap.putAll(map2);
@@ -49,5 +55,16 @@ public class Match {
             }
         }
         return diffList;
+    }
+
+    private static String fileFormat(String file) {
+
+        String format = "";
+        int index = file.lastIndexOf(".");
+
+        if (index > 0) {
+            format = file.substring(index + 1);
+        }
+        return format;
     }
 }

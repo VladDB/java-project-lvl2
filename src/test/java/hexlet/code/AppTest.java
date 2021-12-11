@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class AppTest {
 
@@ -67,7 +69,7 @@ public class AppTest {
     }
 
     @Test
-    public void matchingFilesTestYml() throws IOException {
+    public void matchingFilesTestYml1() throws IOException {
         String expect = "{\n"
                 + "  - follow: false\n"
                 + "    host: hexlet.io\n"
@@ -121,6 +123,14 @@ public class AppTest {
                 + "  + setting3: none\n"
                 + "}";
         String result = Match.matchingFiles("yaml", "./src/test/resources/file3.yaml",
+                "./src/test/resources/file4.yaml");
+        Assertions.assertEquals(expect, result);
+    }
+
+    @Test
+    public void matchingFilesPlainJson() throws IOException {
+        String expect = Files.readString(Paths.get("./src/test/resources/result.txt"));
+        String result = Match.matchingFiles("plain", "./src/test/resources/file3.yaml",
                 "./src/test/resources/file4.yaml");
         Assertions.assertEquals(expect, result);
     }

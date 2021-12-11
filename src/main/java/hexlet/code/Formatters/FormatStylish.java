@@ -1,10 +1,11 @@
-package hexlet.code;
+package hexlet.code.Formatters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import hexlet.code.Difference;
 
 import java.util.List;
 
-public class Format {
+public class FormatStylish {
     public static String showDiff(List<Difference> diffList) throws JsonProcessingException {
         StringBuilder diffString = new StringBuilder();
         diffString.append("{\n");
