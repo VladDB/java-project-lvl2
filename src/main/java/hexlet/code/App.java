@@ -22,7 +22,7 @@ public final class App implements Callable<Object> {
     private String format;
 
     @Override
-    public Object call() {
+    public Integer call() {
         try {
             System.out.println(Match.matchingFiles(format, file1, file2));
         } catch (Exception e) {
