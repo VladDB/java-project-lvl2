@@ -22,9 +22,13 @@ public final class App implements Callable<Object> {
     private String format;
 
     @Override
-    public Object call() throws Exception {
-        System.out.println(Match.matchingFiles(format, file1, file2));
-        return null;
+    public Object call() {
+        try {
+            System.out.println(Match.matchingFiles(format, file1, file2));
+        } catch (Exception e) {
+            return 1;
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
