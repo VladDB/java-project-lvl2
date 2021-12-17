@@ -41,7 +41,7 @@ public class FormatPlain {
                     break;
             }
         }
-        return diffString.toString();
+        return diffString.substring(0, diffString.length() - 1);
     }
 
     private static String checkValue(Object value) {
