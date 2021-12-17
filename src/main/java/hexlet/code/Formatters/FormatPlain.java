@@ -46,6 +46,9 @@ public class FormatPlain {
 
     private static String checkValue(Object value) {
         if (value instanceof String) {
+            if (value.equals("null")) {
+                return "null";
+            }
             return "'" + value + "'";
         } else if (value instanceof Collection || value instanceof Map) {
             return "[complex value]";
