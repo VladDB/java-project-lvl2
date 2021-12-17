@@ -9,7 +9,7 @@ import java.util.TreeMap;
 
 public class Differ {
 
-    public static String generate(String format, String file1, String file2) throws IOException {
+    public static String generate(String file1, String file2, String format) throws IOException {
 
         String formatFirstFile = fileFormat(file1);
         String formatSecondFile = fileFormat(file2);
@@ -40,6 +40,6 @@ public class Differ {
     }
 
     public static String generate(String file1, String file2) throws IOException {
-        return Differ.generate("stylish", file1, file2);
+        return Differ.generate(file1, file2, "stylish");
     }
 }

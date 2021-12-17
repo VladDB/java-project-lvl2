@@ -19,8 +19,8 @@ public class AppTest {
                 + "  + timeout: 20\n"
                 + "  + verbose: true\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file1.json",
-                "./src/test/resources/file2.json");
+        String result = Differ.generate("./src/test/resources/file1.json",
+                "./src/test/resources/file2.json", "stylish");
         Assertions.assertEquals(expect, result);
     }
 
@@ -32,8 +32,8 @@ public class AppTest {
                 + "    proxy: 123.234.53.22\n"
                 + "    timeout: 50\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file1.json",
-                "./src/test/resources/file1.json");
+        String result = Differ.generate("./src/test/resources/file1.json",
+                "./src/test/resources/file1.json", "stylish");
         Assertions.assertEquals(expect, result);
     }
     @Test
@@ -63,8 +63,8 @@ public class AppTest {
                 + "  - setting3: true\n"
                 + "  + setting3: none\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file3.json",
-                "./src/test/resources/file4.json");
+        String result = Differ.generate("./src/test/resources/file3.json",
+                "./src/test/resources/file4.json", "stylish");
         Assertions.assertEquals(expect, result);
     }
 
@@ -78,7 +78,7 @@ public class AppTest {
                 + "  + timeout: 20\n"
                 + "  + verbose: true\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file1.yaml",
+        String result = Differ.generate("./src/test/resources/file1.yaml",
                 "./src/test/resources/file2.yaml");
         Assertions.assertEquals(expect, result);
     }
@@ -90,7 +90,7 @@ public class AppTest {
                 + "    proxy: 123.234.53.22\n"
                 + "    timeout: 50\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file1.yaml",
+        String result = Differ.generate("./src/test/resources/file1.yaml",
                 "./src/test/resources/file1.yaml");
         Assertions.assertEquals(expect, result);
     }
@@ -122,7 +122,7 @@ public class AppTest {
                 + "  - setting3: true\n"
                 + "  + setting3: none\n"
                 + "}";
-        String result = Differ.generate("stylish", "./src/test/resources/file3.yaml",
+        String result = Differ.generate("./src/test/resources/file3.yaml",
                 "./src/test/resources/file4.yaml");
         Assertions.assertEquals(expect, result);
     }
@@ -130,8 +130,8 @@ public class AppTest {
     @Test
     public void matchingFilesPlain() throws IOException {
         String expect = Files.readString(Paths.get("./src/test/resources/result.txt"));
-        String result = Differ.generate("plain", "./src/test/resources/file3.yaml",
-                "./src/test/resources/file4.yaml");
+        String result = Differ.generate("./src/test/resources/file3.yaml",
+                "./src/test/resources/file4.yaml", "plain");
         Assertions.assertEquals(expect, result);
     }
 
@@ -139,8 +139,8 @@ public class AppTest {
     public void matchingFilesPlainJson() throws IOException {
         String expect = Files.readString(Paths.get("./src/test/resources/resultJSON.txt"));
         expect = expect.substring(0, expect.length() - 1);
-        String result = Differ.generate("json", "./src/test/resources/file3.yaml",
-                "./src/test/resources/file4.yaml");
+        String result = Differ.generate("./src/test/resources/file3.yaml",
+                "./src/test/resources/file4.yaml", "json");
         Assertions.assertEquals(expect, result);
     }
 }
