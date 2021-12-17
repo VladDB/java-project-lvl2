@@ -38,4 +38,8 @@ public class Differ {
         }
         return format;
     }
+
+    public static String generate(String file1, String file2) throws IOException {
+        return Differ.generate("stylish", file1, file2);
+    }
 }
