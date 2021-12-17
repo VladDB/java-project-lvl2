@@ -24,7 +24,7 @@ public final class App implements Callable<Object> {
     @Override
     public Integer call() {
         try {
-            System.out.println(Match.matchingFiles(format, file1, file2));
+            System.out.println(Differ.generate(format, file1, file2));
         } catch (Exception e) {
             return 1;
         }
