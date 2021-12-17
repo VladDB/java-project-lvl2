@@ -23,7 +23,7 @@ public class Match {
         TreeMap<String, Object> map1 = Parser.parseMap(formatFirstFile, firstFile);
         TreeMap<String, Object> map2 = Parser.parseMap(formatSecondFile, secondFile);
 
-        List<Difference> mapsDifference =  DiffMap.findDifference(map1, map2);
+        List<Difference> mapsDifference =  Differ.findDifference(map1, map2);
 
         return Formatter.choseFormat(format, mapsDifference);
     }

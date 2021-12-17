@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class DiffMap {
+public class Differ {
 
     public static List<Difference> findDifference(TreeMap<String, Object> map1, TreeMap<String, Object> map2) {
 
