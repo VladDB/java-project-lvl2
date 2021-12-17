@@ -22,10 +22,10 @@ public final class Difference {
         return value2;
     }
 
-    public Difference(String key, String result, Object value1, Object value2) {
-        this.key = key;
-        this.result = result;
-        this.value1 = value1;
-        this.value2 = value2;
+    public Difference(String keyD, String resultD, Object value1D, Object value2D) {
+        this.key = keyD;
+        this.result = resultD;
+        this.value1 = value1D;
+        this.value2 = value2D;
     }
 }
