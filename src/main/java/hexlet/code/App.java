@@ -36,4 +36,3 @@ public final class App implements Callable<Object> {
         System.exit(exitCode);
     }
 }
-
